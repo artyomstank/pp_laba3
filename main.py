@@ -19,7 +19,13 @@ def find_hex_colors_in_url(url):
     soup = BeautifulSoup(response.text, 'html.parser')
     text = soup.get_text()
     return find_hex_colors(text)
-
+def find_hex_colors_in_file(file_path):
+    """
+    Находит все HEX-цвета в загруженном файле.
+    """
+    with open(file_path, 'r', encoding='utf-8') as file:
+        text = file.read()
+    return find_hex_colors(text)
 
 # C:/DDD/laba_3_pp/hcg.txt
 #https://get-color.ru/
